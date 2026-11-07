@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graham Lederer, Ph.D.</title>
+<meta name="description" content="Graham Lederer is a geologist working on critical minerals, mineral resource assessment, and AI for the geosciences. Principal Scientist at Jataware; formerly a Research Geologist at the U.S. Geological Survey.">
+<meta property="og:title" content="Graham Lederer, Ph.D.">
+<meta property="og:description" content="Geologist · critical minerals · AI for the geosciences">
+<meta property="og:image" content="img/headshot.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ee; --surface:#fffdf9; --ink:#1f1d1a; --muted:#6b645a; --line:#e3ddd1;
+  --accent:#a24a22; --accent-soft:#f3e3d8; --chip:#efe9de;
+  --serif:"Source Serif 4", Georgia, serif; --sans:Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#151412; --surface:#1d1b18; --ink:#ece7de; --muted:#a39b8f; --line:#2f2c27;
+    --accent:#e08a5c; --accent-soft:#3a271c; --chip:#26231f; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 var(--sans); -webkit-font-smoothing:antialiased}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px; margin:0 auto; padding:0 20px}
+
+/* nav */
+nav{position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+nav .wrap{display:flex; align-items:center; gap:24px; height:56px; overflow-x:auto; white-space:nowrap; scrollbar-width:none}
+nav .brand{font:600 17px var(--serif); color:var(--ink); margin-right:auto}
+nav a.nl{color:var(--muted); font-size:14px; font-weight:500}
+nav a.nl:hover{color:var(--ink); text-decoration:none}
+
+/* hero */
+.hero{display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:center; padding:64px 0 48px}
+.portrait{width:200px; aspect-ratio:1/1; border-radius:14px; overflow:hidden; box-shadow:0 1px 0 var(--line), 0 12px 30px -12px rgba(0,0,0,.35)}
+.portrait img{width:100%; height:100%; object-fit:cover; display:block}
+h1{font:700 clamp(34px,5vw,48px)/1.1 var(--serif); margin:0 0 8px; letter-spacing:-.01em}
+.role{font-size:18px; color:var(--muted); margin:0 0 18px}
+.role b{color:var(--ink); font-weight:600}
+.lede{font:400 19px/1.55 var(--serif); margin:0 0 22px; max-width:56ch}
+.links{display:flex; flex-wrap:wrap; gap:10px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; background:var(--chip); color:var(--ink); font-size:14px; font-weight:500; border:1px solid var(--line)}
+.btn:hover{text-decoration:none; border-color:var(--accent)}
+.btn.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
+.btn svg{width:16px; height:16px}
+
+/* sections */
+section{padding:48px 0; border-top:1px solid var(--line)}
+h2{font:700 28px/1.2 var(--serif); margin:0 0 24px}
+h3{font:600 18px/1.3 var(--sans); margin:0}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px}
+.prose p{font:400 17.5px/1.65 var(--serif); margin:0 0 14px; max-width:68ch}
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+.tag{font-size:13px; padding:4px 10px; border-radius:999px; background:var(--accent-soft); color:var(--ink)}
+
+/* timeline */
+.tl{list-style:none; margin:0; padding:0}
+.tl li{display:grid; grid-template-columns:120px 1fr; gap:20px; padding:18px 0; border-bottom:1px dashed var(--line)}
+.tl li:last-child{border-bottom:0}
+.tl .when{color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; padding-top:2px}
+.tl .org{color:var(--muted); font-size:15px; margin:2px 0 8px}
+.tl ul{margin:0; padding-left:18px}
+.tl ul li{display:list-item; padding:2px 0; border:0; font-size:15px}
+
+/* gallery */
+.gallery{display:grid; grid-template-columns:1.4fr 1fr; gap:20px; align-items:start}
+.maps{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; background:#000; border-radius:12px; padding:10px; align-content:center}
+.maps img{width:100%; aspect-ratio:4/3; object-fit:contain; display:block}
+figure{margin:0}
+figcaption{font-size:13.5px; color:var(--muted); margin-top:10px; line-height:1.5}
+.outcrop img{width:100%; height:100%; max-height:240px; object-fit:cover; border-radius:12px; display:block}
+
+/* refs */
+.subhead{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:8px}
+.count{color:var(--muted); font-size:14px}
+.filter{width:100%; max-width:340px; padding:9px 14px; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:14px var(--sans)}
+h4.yr{font:600 13px var(--sans); letter-spacing:.08em; color:var(--accent); margin:22px 0 6px; text-transform:uppercase}
+ol.refs{list-style:none; margin:0; padding:0}
+ol.refs li{padding:9px 0 9px 14px; border-left:2px solid var(--line); font-size:15px; line-height:1.55; margin-bottom:4px}
+ol.refs li:hover{border-left-color:var(--accent)}
+ol.refs b{font-weight:600}
+sup.st{color:var(--accent); font-weight:600}
+a.ext{font-size:12.5px; font-weight:600; white-space:nowrap; margin-left:4px}
+details{margin-top:28px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:4px 20px}
+summary{cursor:pointer; padding:14px 0; font-weight:600; list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+"; display:inline-block; width:20px; color:var(--accent); font-weight:700}
+details[open] summary::before{content:"–"}
+details[open]{padding-bottom:16px}
+.note{font-size:13.5px; color:var(--muted); margin-top:12px}
+
+/* press */
+.press{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px}
+.press a{display:flex; flex-direction:column; gap:6px; height:100%; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px; color:var(--ink)}
+.press a:hover{text-decoration:none; border-color:var(--accent)}
+.press .outlet{font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--accent)}
+.press .ttl{font:600 16px/1.35 var(--serif)}
+.press .by{font-size:13px; color:var(--muted); margin-top:auto}
+.rel{margin:20px 0 0; padding-left:18px; font-size:15px}
+.rel li{margin:6px 0}
+
+/* edu */
+.edu .card p{margin:6px 0 0; font-size:15px; color:var(--muted)}
+.edu .card .deg{color:var(--ink); font-size:16px; margin-top:4px}
+
+footer{border-top:1px solid var(--line); padding:32px 0 48px; color:var(--muted); font-size:14px}
+footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr; gap:24px; padding:40px 0 32px}
+  .portrait{width:140px}
+  .grid2,.gallery{grid-template-columns:1fr}
+  .tl li{grid-template-columns:1fr; gap:4px}
+  nav a.nl{font-size:13px}
+  nav .wrap{gap:16px}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top">Graham Lederer</a>
+  <a class="nl" href="#about">About</a>
+  <a class="nl" href="#experience">Experience</a>
+  <a class="nl" href="#publications">Publications</a>
+  <a class="nl" href="#talks">Talks</a>
+  <a class="nl" href="#press">Press</a>
+  <a class="nl" href="#contact">Contact</a>
+</div></nav>
+
+<main class="wrap" id="top">
+<header class="hero">
+  <div class="portrait"><img src="img/headshot.jpg" alt="Headshot of Graham Lederer outdoors in the mountains"></div>
+  <div>
+    <h1>Graham Lederer, Ph.D.</h1>
+    <p class="role"><b>Principal Scientist</b> · Jataware &nbsp;|&nbsp; Central Coast, California</p>
+    <p class="lede">Geologist working at the intersection of critical minerals, mineral resource assessment, and artificial intelligence. Formerly a Research Geologist at the U.S. Geological Survey, where I led the DARPA-funded CriticalMAAS program.</p>
+    <div class="links">
+      <a class="btn primary" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+      <a class="btn" href="https://www.linkedin.com/pub/graham-lederer/83/a2/841" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.12 1.43-2.12 2.9V21H9z"/></svg>LinkedIn</a>
+      <a class="btn" href="#publications">Publications</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="prose">
+    <p>I have spent more than a decade leading research programs on critical mineral resources and supply chains, and over twenty years doing field geology. My work combines economic geology, geospatial data, and machine learning to help policymakers, federal agencies, industry, and international partners understand where mineral resources are and what it takes to bring them to market.</p>
+    <p>At the USGS I led the DARPA-funded <em>Critical Mineral Assessments with AI Support</em> (CriticalMAAS) program, which built AI/ML tools for geologic maps, mineral reports, prospectivity models, and human–machine interfaces. I also led the MINFRAME project on methods for quantitative mineral resource assessment and critical-minerals workforce training, advised the Earth Mapping Resources Initiative (Earth MRI), and was a core contributor to the 2017 U.S. Critical Minerals List. Today I build software for the geosciences at Jataware.</p>
+    <p>My research started in tectonics: monazite petrochronology of Himalayan granites, Blue Ridge basement structure, rare earth mineralization in the Mojave, and high-precision U–Pb geochronology of the Siberian Traps.</p>
+  </div>
+  <div class="tags">
+    <span class="tag">Critical minerals</span><span class="tag">Mineral resource assessment</span><span class="tag">Prospectivity modeling</span><span class="tag">AI/ML for geoscience</span><span class="tag">Supply chain analysis</span><span class="tag">Tungsten · REE · Be · graphite · Ni-Co laterites</span><span class="tag">Petrochronology</span>
+  </div>
+</section>
+
+<section id="field">
+  <h2>From the lab and the field</h2>
+  <div class="gallery">
+    <figure>
+      <div class="maps">
+        <img src="img/monazite-1.jpg" alt="False-color compositional map of a zoned monazite grain">
+        <img src="img/monazite-2.jpg" alt="False-color compositional map of a zoned monazite grain">
+        <img src="img/monazite-3.jpg" alt="False-color compositional map of a zoned monazite grain">
+      </div>
+      <figcaption>Compositional X-ray maps of zoned monazite crystals from my petrochronology work on Himalayan granites. Growth zoning like this records the timing and duration of crustal melting.</figcaption>
+    </figure>
+    <figure class="outcrop">
+      <img src="img/outcrop.jpg" alt="Coarse-grained outcrop with a pen for scale">
+      <figcaption>An outcrop in the field, with a pen for scale.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <ol class="tl">
+    <li><div class="when">2026 – present</div><div><h3>Principal Scientist</h3><div class="org">Jataware Corporation</div>
+      <ul><li>Builds AI tools and data platforms for the geosciences and critical minerals.</li></ul></div></li>
+    <li><div class="when">2020 – 2026</div><div><h3>Research Geologist</h3><div class="org">U.S. Geological Survey, Geology, Energy &amp; Minerals Science Center</div>
+      <ul>
+        <li>Led the DARPA-funded CriticalMAAS program to speed up mineral resource assessment with AI/ML, across geologic maps, mineral reports, prospectivity models, and human–machine interfaces.</li>
+        <li>Led the MINFRAME project (Methodological Infrastructure Needed for Mineral Resource Assessment Modeling and Evaluation) on quantitative assessment methods and critical-minerals workforce training.</li>
+        <li>Ran field investigations, lab studies, and resource assessments for tungsten, nickel, cobalt, lithium, and graphite.</li>
+        <li>Advised the Mineral Resources Program and Earth MRI as a subject matter expert.</li>
+      </ul></div></li>
+    <li><div class="when">2015 – 2020</div><div><h3>Physical Scientist</h3><div class="org">U.S. Geological Survey, National Minerals Information Center</div>
+      <ul>
+        <li>Did criticality assessments, material flow analyses, and country-level studies of mineral commodities.</li>
+        <li>Studied global stocks and flows of beryllium, tungsten, lithium, copper, aluminum, tin, and other commodities, plus topical studies on China, Iran, and Indonesia.</li>
+        <li>Core contributor to the 2017 U.S. Critical Minerals List.</li>
+      </ul></div></li>
+    <li><div class="when">2014 – 2015</div><div><h3>Postdoctoral Research Associate</h3><div class="org">Massachusetts Institute of Technology</div>
+      <ul><li>High-precision U–Pb geochronology of large igneous provinces and mass extinction events.</li></ul></div></li>
+    <li><div class="when">2014</div><div><h3>Teaching Associate</h3><div class="org">University of California, Santa Barbara</div>
+      <ul><li>Lead instructor for a 200-student introductory course on geological catastrophes.</li></ul></div></li>
+    <li><div class="when">2011</div><div><h3>Geologist</h3><div class="org">U.S. Geological Survey</div>
+      <ul><li>Investigated rare earth element resources, mines, and trade flows.</li></ul></div></li>
+  </ol>
+</section>
+
+<section id="education" class="edu">
+  <h2>Education</h2>
+  <div class="grid2">
+    <div class="card"><h3>University of California, Santa Barbara</h3><p class="deg">Ph.D., Geological Sciences · 2014</p>
+      <p><a href="https://www.alexandria.ucsb.edu/lib/ark:/48907/f38c9tds" target="_blank" rel="noopener">Timescales of crustal anatexis: monazite petrochronology of Himalayan granites&nbsp;&#8599;</a></p></div>
+    <div class="card"><h3>College of William &amp; Mary</h3><p class="deg">B.S., Geology and Environmental Science · 2009</p>
+      <p><a href="https://scholarworks.wm.edu/honorstheses/324/" target="_blank" rel="noopener">Geology and structural history of the Blue Ridge basement complex, Albemarle County, Virginia&nbsp;&#8599;</a></p></div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="subhead"><h2 style="margin:0">Publications, reports &amp; data releases</h2><span class="count" id="pubcount">35 items</span></div>
+  <input class="filter" id="q" type="search" placeholder="Filter by keyword, author, or year" aria-label="Filter publications">
+  <div id="publist">
+<h4 class="yr">2025</h4><ol class="refs">
+<li data-y="2025">Parks, H.L., Hatch, S.A., and <b>Lederer, G.W.</b>, 2025, Digital data for U.S. Geological Survey Professional Paper 1300, wilderness mineral potential, volumes 1 and 2: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P1C9SKPU" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2025">Tognotti, K.<sup class="st">*</sup>, <b>Lederer, G.</b>, Parol, A., Marsh, E., and Foster, A., 2025, Historical nickel laterite regions and assay samples in southern Oregon and northern California, USA: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P13J2ITX" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2025">Tognotti, K.E.<sup class="st">*</sup>, <b>Lederer, G.W.</b>, Parol, A.F., Marsh, E., and Foster, A.L., 2025, Prospectivity and Extractability Modeling of Ni-Co Laterite in the Josephine Peridotite, California and Oregon, USA, from Historical and Modern Sources: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P1LA48V9" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2025">Becker, N.A.<sup class="st">*</sup>, Hubbard, B.E., Johnson, N.T., and <b>Lederer, G.W.</b>, 2025, Visible and Near Infrared (VNIR) and Short Wavelength Infrared (SWIR) Spectra of Select Altered Mafic and Ultramafic Rock Samples from the Josephine Peridotite in CA and OR, the Yukon-Tanana region in Alaska, and from the Southern Appalachians in VA, NC, SC, and GA: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P146B9KF" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2025"><b>Lederer, G.W.</b>, Jones III, J.V., McPhee, D., Loferski, P.J., Seal II, R.R., Bedrosian, P.A., Macqueen, P.G., Grauch, V.J.S, Solano, F., Rosera, J.M., and Pineault, D.G., 2025, Annual review 2024: Critical minerals: Mining Engineering, v. 77, no. 5, p. 38-53. <a class="ext" href="https://me.smenet.org/usgs-critical-minerals-review-4/" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2024</h4><ol class="refs">
+<li data-y="2024"><b>Lederer, G.W.</b>, Jones III, J.V., McPhee, D., Mauk, J.L., Seal II, R.R., Campbell, K.M., Hammarstrom, J.M., Bedrosian, P.A., Macqueen, P.G., Graham, G.E., Solano, F., Case, G.N.D., and Pineault, D.G., 2024, Annual review 2023: Critical minerals: Mining Engineering, v. 76, no. 5, p. 29–42.</li>
+<li data-y="2024">Zach, T.A.<sup class="st">*</sup>, <b>Lederer, G.W.</b>, and Bliss, J.D., 2024, Grade and tonnage data for disseminated flake graphite deposits: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P1QC3RLV" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2024">Wilder, J.M.<sup class="st">*</sup>, and <b>Lederer, G.W.</b>, 2024, Grade and tonnage data for tungsten vein and greisen deposits: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P1NJMDD9" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2024">Dao, A.<sup class="st">*</sup> and <b>Lederer, G.W.</b>, 2024, Locations of mines and prospects in Amelia County, Virginia: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P14HAIVY" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2023</h4><ol class="refs">
+<li data-y="2023">Nassar, N.T., <b>Lederer, G.W.</b>, Padilla, A.J., Gambogi, J., Cordier, D.J., Brainard, J.L., Lessard, J., and Charab, R., 2023, Rock-to-metal ratios of the rare earth elements, Journal of Cleaner Production, v. 405, p. 136958. <a class="ext" href="https://doi.org/10.1016/j.jclepro.2023.136958" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2023">Lawley, C.J.M., Gadd, M.G., Parsa, M., <b>Lederer, G.W.</b>, Graham, G.E., and Ford, A., 2023, Applications of Natural Language Processing to Geoscience Text Data and Prospectivity Modeling: Natural Resources Research v. 32, p. 1503–1527. <a class="ext" href="https://doi.org/10.1007/s11053-023-10216-1" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2023"><b>Lederer, G.W.</b>, Rosera, J.M., Goldman, M.A, Graham, G.E., Mishra, A., Towler, A., Wilson, B., Graf, D., Milano, M., Roberts, E., Hedrick, G., Oertel, C., Dardas, A., McEntee, T., 2023, Automated georeferencing and feature extraction of geologic maps and mineral sites, Geological Survey of Finland GTK Open File Research Report 29/2023. <a class="ext" href="https://hakku.gtk.fi/en/publications?id=22236" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2023">Goldman, M.A., Rosera, J.M., <b>Lederer, G.W.</b>, Graham, G.E., Mishra, A., and Yepremyan, A., 2023, Training and validation data from the AI for Critical Mineral Assessment Competition: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P9FXSPT1" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2023">Fortier, S.M., Nassar, N.T., Day, W.C., Hammarstrom, J.M., Seal, R.R., Graham, G.E., and <b>Lederer, G.W.</b>, 2023, USGS Critical Minerals Review: Mining Engineering, v. 75, p. 30. <a class="ext" href="https://apps.usgs.gov/minerals-information-archives/articles/USGS-Critical-Minerals-Review-2022.pdf" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2023">Stillings, L.L., Parks, H.L., Wallis, J., Ratajczyk, E., Scianna, A., Vikre, P., Zientek, M.L., <b>Lederer, G.W.</b>, and Coyan, J.A., 2023, Identification of New Data (2016-2022) for the Sagebrush Focal Area in Nevada, Restricted-File Federal Interagency Report.</li>
+</ol>
+<h4 class="yr">2022</h4><ol class="refs">
+<li data-y="2022"><b>Lederer, G.W.</b>, 2022, Optimization of Mineral Resource Data: Mine Wastes, Resource Assessments, and Focus Areas, in Wilson, T.S., Wiltermuth, M.T., Jenni, K.E., Horton, R.J., Hunt, R.J., Williams, D.M., Nolan, V.P., Aumen, N.G., Brown, D.S., Blasch, K.W., and Murdoch, P.S., 2022, Use case development for earth monitoring, analysis, and prediction (EarthMAP)—A road map for future integrated predictive science at the U.S. Geological Survey: U.S. Geological Survey Open-File Report 2021–1108, 137 p. <a class="ext" href="https://doi.org/10.3133/ofr20211108" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2022">Nassar, N.T., <b>Lederer, G.W.</b>, Brainard, J.L., Padilla, A.J., Lessard, J., 2022, Rock-to-metal ratio—a foundational metric for understanding mine wastes: Environmental Science and Technology, v. 56, p. 6710-6721. <a class="ext" href="https://doi.org/10.1021/acs.est.1c07875" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2021</h4><ol class="refs">
+<li data-y="2021"><b>Lederer, G.W.</b>, Solano, F., Coyan, J.A., Denton, K.M., Watts, K.E., Mercer, C.N., Bickerstaff, D.P., and Granitto, M., 2021, Tungsten skarn mineral resource assessment of the Great Basin region of western Nevada and eastern California: Journal of Geochemical Exploration, v. 223. <a class="ext" href="https://doi.org/10.1016/j.gexplo.2020.106712" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2021"><b>Lederer, G.W.</b>, Solano, F., Coyan, J.A., Denton, K.M., Watts, K.E., Mercer, C.N., Bickerstaff, D., and Granitto, M., 2021, Tungsten skarn mineral resource assessment of the Great Basin region of western Nevada and eastern California—Simulation results: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P9RD6SEF" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2021">Solano, F., <b>Lederer, G.W.</b>, Coyan, J.A., Denton, K.M., Watts, K.E., Mercer, C.N., Bickerstaff, D.P., and Granitto, M., 2021, Tungsten skarn mineral resource assessment of the Great Basin region of western Nevada and eastern California - Geodatabase: U.S. Geological Survey data release. <a class="ext" href="https://doi.org/10.5066/P9D1KQGR" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2021">Manley, R.M., and <b>Lederer, G.W.</b>, 2021, MapMark4 Shiny, U.S. Geological Survey software release. <a class="ext" href="https://doi.org/10.5066/P96MN574" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2021">Fortier, S.M., Nassar, N.T., Kelley, K.D., <b>Lederer, G.W.</b>, Mauk, J.L., Hammarstrom, J.M., Day, W.C., Seal, R.R., 2021, USGS 2020 Critical Minerals Review: Mining Engineering, v. 73, p. 32.</li>
+</ol>
+<h4 class="yr">2020</h4><ol class="refs">
+<li data-y="2020">Green, C.J., <b>Lederer, G.W.</b>, Parks, H.L., and Zientek, M.L., 2020, Grade and tonnage model for tungsten skarn deposits—2020 update: U.S. Geological Survey Scientific Investigations Report 2020– 5085, 23 p. <a class="ext" href="https://doi.org/10.3133/sir20205085" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2020">Nassar, N.T., Brainard, J., Gulley, A., Manley, R., Matos, G., <b>Lederer, G.</b>, Bird, L.R., Pineault, D., Alonso, E., Gambogi, J., and Fortier, S.M., 2020, Evaluating the mineral commodity supply risk of the U.S. manufacturing sector: Science Advances, v. 6. <a class="ext" href="https://doi.org/10.1126/sciadv.aay8647" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2019</h4><ol class="refs">
+<li data-y="2019">Cottle, J., <b>Lederer, G.</b>, and Larson, K., 2019, The monazite record of pluton assembly—Mapping Manaslu using petrochronology: Chemical Geology, v. 530. <a class="ext" href="https://doi.org/10.1016/j.chemgeo.2019.119309" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2018</h4><ol class="refs">
+<li data-y="2018">Fortier, S.M., Nassar, N.T., <b>Lederer, G.W.</b>, Brainard, J., Gambogi, J., and McCullough, E.A., 2018, Draft critical mineral list—Summary of methodology and background information—U.S. Geological Survey technical input document in response to Secretarial Order No. 3359: U.S. Geological Survey Open-File Report 2018–1021, 15 p. <a class="ext" href="https://doi.org/10.3133/ofr20181021" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2018"><b>Lederer, G.W.</b>, and McCullough, E.A., 2018, Meeting the mineral needs of the United States: Eos, v. 99. <a class="ext" href="https://doi.org/10.1029/2018EO102177" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2017</h4><ol class="refs">
+<li data-y="2017">Larson, K.P., Cottle, J.M., <b>Lederer, G.</b>, and Rai, S.M., 2017, Defining shear zone boundaries using fabric intensity gradients—An example from the east-central Nepal Himalaya: Geosphere, v. 13. <a class="ext" href="https://doi.org/10.1130/GES01373.1" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2016</h4><ol class="refs">
+<li data-y="2016">Hastorun, Sinan, Renaud, K.M., and <b>Lederer, G.W.</b>, 2016, Recent trends in the nonfuel minerals industry of Iran: U.S. Geological Survey Circular 1421, 18 p. <a class="ext" href="https://doi.org/10.3133/cir1421" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2016">Larson, K.P., Kellett, D.A., Cottle, J.M., King, J., <b>Lederer, G.</b>, and Rai, S.M., 2016, Anatexis, cooling, and kinematics during orogenesis: Miocene development of the Himalayan metamorphic core, east- central Nepal: Geosphere, v. 12. <a class="ext" href="https://doi.org/10.1130/GES01293.1" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2016"><b>Lederer, G.W.</b>, Foley, N.K., Jaskula, B.W., and Ayuso, R.A., 2016, Beryllium—A critical mineral commodity—Resources, production, and supply chain: U.S. Geological Survey Fact Sheet 2016– 3081, 4 p. <a class="ext" href="https://doi.org/10.3133/fs20163081" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2016"><b>Lederer, G.W.</b>, 2016, Resource nationalism in Indonesia—Effects of the 2014 mineral export ban: U.S. Geological Survey Fact Sheet 2016-3072, 6 p. <a class="ext" href="https://doi.org/10.3133/fs20163072" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2015</h4><ol class="refs">
+<li data-y="2015">McKinney, S.T., Cottle, J.M., and <b>Lederer, G.W.</b>, 2015, Evaluating rare earth element (REE) mineralization mechanisms in Proterozoic gneiss, Music Valley, California: Geological Society of America Bulletin, v. 127. <a class="ext" href="https://doi.org/10.1130/B31165.1" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2013</h4><ol class="refs">
+<li data-y="2013"><b>Lederer, G.</b>, Cottle, J., Jessup, M., Langille, J., and Ahmad, T., 2013, Timescales of partial melting in the Himalayan middle crust—Insight from the Leo Pargil dome, northwest India: Contributions to Mineralogy and Petrology, v. 166. <a class="ext" href="https://doi.org/10.1007/s00410-013-0935-9" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2012</h4><ol class="refs">
+<li data-y="2012">Langille, J., Jessup, M., Cottle, J., <b>Lederer, G.</b>, and Ahmad, T., 2012, Timing of metamorphism, melting and exhumation of the Leo Pargil dome, northwest India: Journal of Metamorphic Geology, v. 30. <a class="ext" href="https://doi.org/10.1111/j.1525-1314.2012.00998.x" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+</ol>
+  </div>
+  <p class="note"><sup class="st">*</sup> Mentored student or early-career researcher.</p>
+  <details>
+    <summary>Conference abstracts (51)</summary>
+    <div id="abslist">
+<h4 class="yr">2024</h4><ol class="refs">
+<li data-y="2024">Hubbard, B., <b>Lederer, G.</b>, Gray, F., Wilson, F., Orris, G., and Cocker, M., 2024, Field, laboratory, and remote sensing spectral analysis of mineral deposits related to deep weathering in the Greater Antilles and Virgin Islands: Geological Society of America Southeastern Section Meeting, Asheville, North Carolina. <a class="ext" href="https://gsa.confex.com/gsa/2024SE/meetingapp.cgi/Paper/398065" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2024">Rosera, J.M., Pianowski, L., Holm-Denoma, C., Cronkite-Ratcliff, C., Evart, L., Phelps, G., Poletti, J., Wintzer, N., DeAngelo, J., Crocker, K., Wiens, A., Mordensky, S., Sanders, M., Murchek, J., Coyan, J. Case, G., and <b>Lederer, G.</b>, 2024, Lithium pegmatite mineral resource assessment in the eastern United States: Project overview and preliminary grade and tonnage model, Geological Society of America Southeastern Section Meeting, Asheville, North Carolina. <a class="ext" href="https://gsa.confex.com/gsa/2024SE/meetingapp.cgi/Paper/398419" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2024">Rosera, J.M., Goldman, M., Graham, G., and <b>Lederer, G.</b>, 2024, Critical Mineral Assessments with AI Support (CriticalMAAS): A collaborative effort to modernize USGS mineral resource assessments, Geological Society of America Annual Meeting, Anaheim, California, Geological Society of America Abstracts with Programs. Vol. 56, No. 5, 2024. <a class="ext" href="https://doi.org/10.1130/abs/2024AM-403292" target="_blank" rel="noopener">DOI&nbsp;&#8599;</a></li>
+<li data-y="2024">Tognotti, K.<sup class="st">*</sup>, <b>Lederer, G.W.</b>, Parol, A.<sup class="st">*</sup>, Foster, A.L., and Marsh, E., 2024, Prospectivity and extractability modeling of Ni-Co laterite in the Josephine Peridotite, California and Oregon, USA, AGU. <a class="ext" href="https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1684174" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2024">Foster, A.L., Sirirat, J., Creamer, C., Tognotti, K.<sup class="st">*</sup>, <b>Lederer, G.W.</b>, Parol, A.<sup class="st">*</sup>, and Marsh, E., 2024, Development and application of a GIS-based suitability index model to evaluate the potential for agromining Ni-Co laterite in the Josephine Peridotite, California and Oregon, USA. <a class="ext" href="https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1762050" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2024">Dao, A.<sup class="st">*</sup>, <b>Lederer, G.W.</b>, Rosera, J.M., Hubbard, B.E., 2024, Pegmatite Prospectivity in the Piedmont Province of Amelia County, Virginia. <a class="ext" href="https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1554821" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2023</h4><ol class="refs">
+<li data-y="2023">Hammarstrom, J.H., Woodruff, L., <b>Lederer, G.</b>, and Day, W., 2023, Critical battery mineral resources in the United States: Past, present and potential: Society of Economic Geologists, Annual Meeting, London, United Kingdom.</li>
+<li data-y="2023">Stokes, M.R., Case, G.N.D., Zach, T.A.<sup class="st">*</sup>, <b>Lederer, G.W.</b>, Stewart, A.A., 2023, The role of graphite in a changing energy landscape: a geological perspective, Index to the Proceedings of the Forum on the Geology of Industrial Minerals, May 2023, Austin, Texas.</li>
+<li data-y="2023">Marsh, E., <b>Lederer, G.</b>, Foster, A., Lowers, H., and Pillers, R., 2023, Whole rock geochemistry of Ni-Co Laterite occurrences of Northern California and Southern Oregon: Geological Society of America Fall Meeting, Pittsburgh, Pennsylvania. <a class="ext" href="https://gsa.confex.com/gsa/2023AM/webprogram/Paper394583.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2023">Zach, T.<sup class="st">*</sup>, <b>Lederer, G.W.</b>, and Bliss, J.D., 2023. Critical mineral assessment of graphite— Quantifying global grade and tonnage data and implications for United States domestic supply. <a class="ext" href="https://rock.geosociety.org/net/documents/gsa/section/se/2023/program.pdf" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2023">Goldman, M., Graham, G., <b>Lederer, G.W.</b>, and Rosera, J.M., 2023. Progress toward automating georeferencing and feature extraction of geologic maps. <a class="ext" href="https://rock.geosociety.org/net/documents/gsa/section/rm/2023/program.pdf" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2023">Browning-Hanson, J.F.<sup class="st">*</sup>, Robinson, G.R., and <b>Lederer, G.W.</b>, 2023. Preliminary lithium pegmatite mineral prospectivity mapping in southern Maine. <a class="ext" href="https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1313721" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2023">Parol, A.<sup class="st">*</sup>, Hubbard, B.E., Marsh, E., and <b>Lederer, G.W.</b>, 2023. Developing predictive models for the occurrence of Ni-Co laterites in the Josephine Peridotite, California and Oregon, USA. <a class="ext" href="https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1317556" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2023">Lawley, C., Ford, A., <b>Lederer, G.W.</b>, Gadd, M., Parsa, M., 2023, Geoscience language models and their application to geological mapping. <a class="ext" href="https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1245339" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2022</h4><ol class="refs">
+<li data-y="2022">Case and others, 2022, Graphite mineral potential in the United States: An Alaskan perspective, Alaska Miners Association 2022 Fall convention. <a class="ext" href="https://www.alaskaminers.org/_files/ugd/beae26_3203cff527964abdad2062ac261d0ed8.pdf" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2022">Gray, F., Cocker, M.D., and <b>Lederer, G.W.</b>, 2022, Bauxite Red Mud Residue as a Mineral Resource, Society of Economic Geologists Annual Conference, Denver Colorado. <a class="ext" href="https://www.proceedings.com/content/067/067639webtoc.pdf" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2020</h4><ol class="refs">
+<li data-y="2020"><b>Lederer, G.W.</b>, Cottle, J.M., and Larson, K.P., 2020, Inherent inheritance: resolving isotopic heterogeneity of composite plutons in the Himalaya with monazite petrochronology, 2020 Geological Society of America Southeastern Northeastern Section Meeting, Reston, Virginia. <a class="ext" href="https://gsa.confex.com/gsa/2020SE/webprogram/Paper344507.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2019</h4><ol class="refs">
+<li data-y="2019">Cottle, J.M., <b>Lederer, G.W.</b>, and Larson, K.P., 2019, Petrochronologic insight into the assembly of Himalayan plutons, 2019 Geological Society of America Annual Meeting in Phoenix, Arizona, USA. <a class="ext" href="https://gsa.confex.com/gsa/2019AM/webprogram/Paper332249.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2018</h4><ol class="refs">
+<li data-y="2018">Ayuso, R.A., Foley, N., Vazquez, J.A, <b>Lederer, G.</b>, and Jaskula, B., 2018, SHRIMP U-Pb geochronology of zircon and opal, and geochemistry of the world-class volcanic-related beryllium deposit at Spor Mountain, Utah, USA, Resources for Future Generations Conference, Vancouver, Canada. <a class="ext" href="https://www.geoethics.org/rfg2018" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2018">Foley, N., Ayuso, R.A., Vazquez, J.A, <b>Lederer, G.</b>, and Jaskula, B., 2018, Genesis of the super large Spor Mountain, Utah, USA beryllium deposit: Timing and duration of dynamic magmatic- hydrothermal processes, Resources for Future Generations Conference, Vancouver, Canada. <a class="ext" href="https://www.geoethics.org/rfg2018" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2018"><b>Lederer, G.W.</b>, Jaskula, B.W., Foley, N.K., and Ayuso, R.A., 2018, Beryllium material flow analysis and future availability, Resources for Future Generations Conference, Vancouver, Canada. <a class="ext" href="https://www.geoethics.org/rfg2018" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2018"><b>Lederer, G.W.</b>, 2018, Searching in veins for critical minerals: Comparing pegmatite resources to alternatives, 2018 American Geophysical Union Fall Meeting, Washington, D.C. <a class="ext" href="https://abstractsearch.agu.org/meetings/2018/FM/V31G-0208.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2017</h4><ol class="refs">
+<li data-y="2017"><b>Lederer, G.W.</b>, Jaskula, B.W., Foley, N.K., and Ayuso, R.A., 2017, Global beryllium supply chain and materials flow analysis, Geological Society of America Annual Meeting in Seattle, Washington, USA. <a class="ext" href="https://gsa.confex.com/gsa/2017AM/webprogram/Paper297486.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2016</h4><ol class="refs">
+<li data-y="2016">Ayuso, R.A., Vazquez, J.A, Foley, N., <b>Lederer, G.</b>, and Jaskula, B., 2016, American Geophysical Union Fall Meeting, San Francisco, California. <a class="ext" href="https://abstractsearch.agu.org/meetings/2016/FM/V23D-3013.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2016">Foley, N., Ayuso, R.A., <b>Lederer, G.</b>, and Jaskula, B., 2016, Volcanogenic beryllium deposits at Spor Mountain, Utah, USA: impact on past production and material flow cycles, Goldschmidt, Yokohama, Japan. <a class="ext" href="https://goldschmidtabstracts.info/abstracts/abstractView?id=2016000557" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2016">Safirova, E., Hastorun, S., and <b>Lederer, G.</b>, 2016, Trends in Nonferrous Metals Production in Europe, 2002 through 2014: European Metallurgical Conference, Leipzig, Germany. <a class="ext" href="https://emc.gdmb.de/fileadmin/EMC/diverses/EMC2017_Vol3.pdf" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2015</h4><ol class="refs">
+<li data-y="2015"><b>Lederer, G.</b>, Burgess, S.D., Bowring, S.A., and Polozov, A., 2015, Tempo of intrusive magmatism in the Siberian traps, Geological Society of America Annual Meeting in Baltimore, Maryland, USA. <a class="ext" href="https://gsa.confex.com/gsa/2015AM/webprogram/Paper265668.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2014</h4><ol class="refs">
+<li data-y="2014">Ambrose, T.K., Larson, K.P., Guilmette, C., Cottle, J.M., <b>Lederer, G.</b> and Buckingham, H., 2014, Ductile extrusion, underplating, and out-of-sequence thrusting within the Himalayan metamorphic core, Kanchenjunga, Nepal, Geological Society of America Annual Meeting, Vancouver, Canada. <a class="ext" href="https://gsa.confex.com/gsa/2014AM/webprogram/Paper244555.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2014"><b>Lederer, G.W.</b>, 2014, Timescales of crustal anatexis during collisional orogenesis: insight from monazite petrochronology of Himalayan leucogranites, Geological Society of America Penrose Conference, Asheville, North Carolina, USA.</li>
+<li data-y="2014"><b>Lederer, G.W.</b>, and Cottle, J.M., 2014, Time-scales of crustal anatexis in the Himalaya revealed by petrochronology, American Geophysical Union Fall Meeting, San Francisco, California, USA. <a class="ext" href="https://abstractsearch.agu.org/meetings/2014/FM/V43B-4878.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2014"><b>Lederer, G.</b>, Cottle, J.M., and Larson, K.P., 2014, Linking the Manaslu granite to its source using monazite petrochronology, Geological Society of America Annual Meeting, Vancouver, Canada. <a class="ext" href="https://gsa.confex.com/gsa/2014AM/webprogram/Paper249713.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2014">McKinney, S.T., Cottle, J.M., <b>Lederer, G.W.</b>, and Granneman, P.E., 2014, Evaluating mechanisms for rare earth element mineralization in Proterozoic gneiss, Music Valley, California, Goldschmidt, Sacramento, California, USA. <a class="ext" href="https://goldschmidtabstracts.info/abstracts/abstractView?id=2014002497" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2013</h4><ol class="refs">
+<li data-y="2013"><b>Lederer, G.W.</b>, Cottle, J.M., Larson, K., McAtamney, J, Moulton, K., and Kellett, D., 2013, Petrochronologic study of granites in the eastern Nepal Himalaya, American Geophysical Union Fall Meeting, San Francisco, California, USA. <a class="ext" href="https://abstractsearch.agu.org/meetings/2013/FM/T31D-2552.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2013">Lee, C, Chin, E.J., Erdman, M., Gaschnig, R.M., <b>Lederer, G.W.</b>, Savage, P.S., Zhong, S., and Zincone, S., 2013, How to make a craton, American Geophysical Union Fall Meeting, San Francisco, California, USA. <a class="ext" href="https://abstractsearch.agu.org/meetings/2013/FM/T23B-2580.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2013">McAtamney, J., Cottle, J., Larson, K., <b>Lederer, G.</b>, Rai, S.M., 2013, Microstructural insights into strain variation along the Main Central thrust system; eastern Nepal Himalaya, Geological Society of America Annual Meeting in Denver, Colorado, USA. <a class="ext" href="https://gsa.confex.com/gsa/2013AM/webprogram/Paper231289.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2011</h4><ol class="refs">
+<li data-y="2011">Jessup, M.J., Langille, J., Cottle, J.M., Ahmad, T. and <b>Lederer, G.</b>, 2011, Strain localization during dome formation in the Himalaya: Insights from the Ama Drime Massif and Leo Pargil dome, India‐ Tibet, Geological Society of America Penrose Conference, Catalonia, Spain.</li>
+<li data-y="2011">Jessup, M.J., Langille, J., Cottle, J.M., Ahmad, T. and <b>Lederer, G.</b>, 2011, Strain partitioning during dome formation in the Himalaya: Insights into the Ama Drime Massif and Leo Pargil dome, NW India, 26th Himalaya-Karakorum-Tibet Workshop, Canmore, Canada.</li>
+<li data-y="2011">Langille, J., Jessup, M.J., Cottle, J.M., <b>Lederer, G.</b>, and Ahmad, T., 2011, Metamorphism, melting, and exhumation of the Leo Pargil Dome, NW India, 26th Himalaya-Karakorum-Tibet Workshop, Canmore, Canada.</li>
+<li data-y="2011">Langille, J., Jessup, M.J., Cottle, J.M., <b>Lederer, G.</b>, and Ahmad, T., 2011, Insights into metamorphism, crustal melting, and exhumation of the Leo Pargil Dome, western Himalaya, from monazite geochronology, Geological Society of America Annual Meeting in Minneapolis, Minnesota, USA. <a class="ext" href="https://gsa.confex.com/gsa/2011AM/webprogram/Paper193017.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2011"><b>Lederer, G.</b>, Cottle, J., Jessup, M., Langille, J., and Ahmad, T., 2011, Monazite in Himalayan leucogranites: investigating melt systematics in the mid-crust, Geological Society of America Annual Meeting in Minneapolis, Minnesota, USA. <a class="ext" href="https://gsa.confex.com/gsa/2011AM/webprogram/Paper196346.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2010</h4><ol class="refs">
+<li data-y="2010">Jessup, M., Cottle, J., Langille, J., <b>Lederer, G.</b>, and Ahmad, T., 2010, Strain partitioning and crustal melting within the Leo Pargil Dome, NW India, Geological Society of America Annual Meeting in Denver, Colorado, USA. <a class="ext" href="https://gsa.confex.com/gsa/2010AM/webprogram/Paper179259.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2010">Jessup, M., Cottle, J., Langille, J., <b>Lederer, G.</b>, and Ahmad, T., 2010, Contrasting dome formation along the southern margin of the Tibetan plateau, 25th Himalaya-Karakoram-Tibet Workshop: San Francisco, California, USA. <a class="ext" href="https://pubs.usgs.gov/of/2010/1099/jessup/" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2010">Langille, J., Jessup, M., Cottle, J., <b>Lederer, G.</b>, and Ahmad, T., 2010, Kinematic and timing constraints on the Leo Pargil Shear Zone: Implications for extension during exhumation of the Leo Pargil Dome, NW India, Geological Society of America Annual Meeting in Denver, Colorado, USA. <a class="ext" href="https://gsa.confex.com/gsa/2010AM/webprogram/Paper179918.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2010">Langille, J., Jessup, M., Cottle, J., <b>Lederer, G.</b>, and Ahmad, T., 2010, Timing of metamorphism and extension in the western Himalaya: Leo Pargil Dome, NW India, Goldschmidt, Knoxville, Tennessee, USA. <a class="ext" href="https://goldschmidtabstracts.info/abstracts/abstractView?id=2010003316" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2010">Langille, J., Jessup, M., Cottle, J., <b>Lederer, G.</b>, and Ahmad, T., 2010, Timing of metamorphism and extension in the western Himalaya: Leo Pargil Dome, NW India, 25th Himalaya-Karakoram-Tibet Workshop: San Francisco, California, USA. <a class="ext" href="https://pubs.usgs.gov/of/2010/1099/langille/" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2010"><b>Lederer, G.</b>, Cottle, J., Jessup, M., Langille, J., and Ahmad, T., 2010, Petrochronologic constraints on partial melting in the Leo Pargil Dome, NW India, Goldschmidt, Knoxville, Tennessee, USA. <a class="ext" href="https://goldschmidtabstracts.info/abstracts/abstractView?id=2010003299" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2010"><b>Lederer, G.W.</b>, Cottle, J.M., Jessup, M.J., Langille, J., and Ahmad, T., 2010, Temporal constraints on partial melting and deformation in the Himalayan mid-crust, Leo Pargil Dome, NW India, American Geophysical Union Fall Meeting, San Francisco, California, USA. <a class="ext" href="https://abstractsearch.agu.org/meetings/2010/FM/T23A-2240.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2010"><b>Lederer, G.</b>, Cottle, J., Jessup, M., Langille J., and Ahmad, T., 2010, Timescales of crustal melting within the Leo Pargil Dome, NW India, 25th Himalaya-Karakoram-Tibet Workshop: San Francisco, California, USA. <a class="ext" href="https://pubs.usgs.gov/of/2010/1099/lederer/" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2009</h4><ol class="refs">
+<li data-y="2009">Laskowski, A., Bailey, C., Nicholls, O., Garber, J., Knieser, B., <b>Lederer, G.</b>, and Murray, L., 2009, The Sugar Hollow Basin: a Neoproterozoic half graben complex in the central Virginia Blue Ridge, Geological Society of America Southeastern Section Meeting. <a class="ext" href="https://gsa.confex.com/gsa/2009SE/webprogram/Paper154835.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2009"><b>Lederer, G.</b>, and Bailey, C., 2009, Geology and structural history of the Blue Ridge basement complex in Albemarle County, Virginia, Geological Society of America Southeastern Section Meeting. <a class="ext" href="https://gsa.confex.com/gsa/2009SE/webprogram/Paper154862.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2008</h4><ol class="refs">
+<li data-y="2008">Gattuso, A.P., Bailey, C., Lemon, C., <b>Lederer, G.</b>, Hartmann, A., and Knuth, F., 2008, Geology of the Crozet 7.5’ quadrangle, Blue Ridge Province, Virginia, Geological Society of America Southeastern Section Meeting. <a class="ext" href="https://gsa.confex.com/gsa/2008SE/webprogram/Paper136404.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+    </div>
+  </details>
+</section>
+
+<section id="talks">
+  <div class="subhead"><h2 style="margin:0">Invited presentations</h2><span class="count">20 talks</span></div>
+<h4 class="yr">2024</h4><ol class="refs">
+<li data-y="2024"><b>Lederer, G.W.</b>, Stengel, V., and Hubbard, B., February 2024, Geoenvironmental and resource assessment capabilities at the U.S. Geological Survey, Defense Nuclear Facilities Safety Board.</li>
+<li data-y="2024"><b>Lederer, G.W.</b>, March 2024, Economics of flake graphite and unique challenges of modeling an industrial commodity, MRP Symposium, Colorado School of Mines, Golden, Colorado.</li>
+<li data-y="2024"><b>Lederer, G.W.</b>, May 2024, Cutting Edge Now: AI/Machine Learning Panelist, Future Innovation Needs for Responsible Mining of Critical Minerals, Department of Energy, Boston. <a class="ext" href="https://usea.org/event/future-innovation-needs-responsible-mining-critical-minerals-boston" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2024"><b>Lederer, G.W.</b>, June 2024, Geologic Hydrogen Kickoff, Critical Mineral Assessments with AI Support, ARPA-E.</li>
+<li data-y="2024"><b>Lederer, G.W.</b>, July 2024, Critical Mineral Assessments with AI Support, National Academies of Sciences Review Panel.</li>
+<li data-y="2024"><b>Lederer, G.W.</b>, July 2024, AI/ML solutions for georeferencing and vectorizing geological maps, California Geological Survey.</li>
+<li data-y="2024"><b>Lederer, G.W.</b> and Rosera, J.M., October 2024, Briefing for congressional delegation from Montana, Reston, Virginia.</li>
+<li data-y="2024"><b>Lederer, G.W.</b> and Mellors, R., November 2024, What lies beneath and ahead: CriticalMAAS and Subsurface Mineral Mapping, Transforming Mining and the Critical Mineral Ecosystem: The Mine of the Future Workshop.</li>
+<li data-y="2024"><b>Lederer, G.W.</b> and Rosera, J.M., December 2024, Automating georeferencing and feature extraction of geologic maps using AI/ML tools, Geological Mapping Forum, University of Minnesota.</li>
+</ol>
+<h4 class="yr">2023</h4><ol class="refs">
+<li data-y="2023"><b>Lederer, G.W.</b>, Rosera, J.M., and Goldman, M., 2023. Automated solutions for georeferencing and vectorizing geological maps. <a class="ext" href="https://rock.geosociety.org/net/documents/gsa/section/se/2023/program.pdf" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2023"><b>Lederer, G.W.</b>, October 2023, Critical Mineral Assessments with AI Support, Earth MRI Workshop, Reston, Virginia.</li>
+</ol>
+<h4 class="yr">2022</h4><ol class="refs">
+<li data-y="2022"><b>Lederer, G.W.</b>, November 2022, Automated georeferencing and feature extraction of geologic maps and mineral sites, Mineral prospectivity and exploration targeting (MinProXT) workshop, Freiberg, Germany.</li>
+<li data-y="2022"><b>Lederer, G.W.</b>, and Elliott, J., 2022, Using AI to locate critical mineral resources, DARPA Forward San Diego. <a class="ext" href="https://forward.darpa.mil/event/University-of-California" target="_blank" rel="noopener">Link&nbsp;&#8599;</a> <a class="ext" href="https://www.youtube.com/watch?v=skjK_e_CH6Q&amp;list=PL6wMum5UsYvaQ5CCEFd4I6noNtOsPKwc0" target="_blank" rel="noopener">Video&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2021</h4><ol class="refs">
+<li data-y="2021"><b>Lederer, G.W.</b>, 2021, Applying economic filters to mine tailings, USGS Waste as a Resource Workshop.</li>
+</ol>
+<h4 class="yr">2019</h4><ol class="refs">
+<li data-y="2019"><b>Lederer, G.W.</b>, 2019, Strategic minerals: criticality and energy considerations, Industry-Rice Earth Science Symposia on minerals and energy: science, economics and policy, Rice University. <a class="ext" href="http://earthscience.rice.edu/iress2019/" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+<li data-y="2019"><b>Lederer, G.W.</b>, and Burton, W.C., 2019, Powell 150, the Sesquicentennial Colorado River Exploring Expedition, and the continued legacy of John Wesley Powell, Geological Society of Washington, Washington, D.C.</li>
+</ol>
+<h4 class="yr">2018</h4><ol class="refs">
+<li data-y="2018"><b>Lederer, G.W.</b>, 2018, Development of the critical minerals list – a summary of the USGS methodology, 8th Trilateral EU-US-Japan Conference on Critical Materials, Tokyo, Japan. <a class="ext" href="https://www.meti.go.jp/english/press/2018/1206_001.html" target="_blank" rel="noopener">Link&nbsp;&#8599;</a></li>
+</ol>
+<h4 class="yr">2017</h4><ol class="refs">
+<li data-y="2017"><b>Lederer, G.W.</b>, 2017, Resource nationalism in Indonesia—Effects of the 2014 mineral export ban, Geological Society of Washington, Washington, D.C.</li>
+<li data-y="2017"><b>Lederer, G.W.</b>, 2017, Beryllium research at the United States Geological Survey: A critical mineral case study, University of Rochester.</li>
+</ol>
+<h4 class="yr">2016</h4><ol class="refs">
+<li data-y="2016">Hastorun, S.H., Renaud, K.R., and <b>Lederer, G.W.</b>, 2016, Iran’s Nonfuel Minerals Industry, Center for Strategic and International Studies, Washington, D.C.</li>
+</ol>
+</section>
+
+<section id="press">
+  <h2>In the press</h2>
+  <ul class="press">
+<li><a href="https://www.eenews.net/articles/ai-turbocharges-us-hunt-for-minerals-fossil-fuels/" target="_blank" rel="noopener"><span class="outlet">E&amp;E News · 2025</span><span class="ttl">AI turbocharges US hunt for minerals, fossil fuels</span><span class="by">Ian M. Stevenson &amp; Hannah Northey</span></a></li>
+<li><a href="https://undark.org/2024/11/13/the-search-for-critical-minerals-is-going-high-tech/" target="_blank" rel="noopener"><span class="outlet">Undark · 2024</span><span class="ttl">The search for critical minerals is going high tech</span><span class="by">Sarah Scoles</span></a></li>
+<li><a href="https://www.mining-technology.com/features/can-ai-mitigate-the-global-shortage-of-geologists/" target="_blank" rel="noopener"><span class="outlet">Mining Technology · 2024</span><span class="ttl">Can AI mitigate the global shortage of geologists?</span><span class="by">Claire Jenns</span></a></li>
+<li><a href="https://foreignpolicy.com/2024/08/19/artificial-intelligence-critical-mineral-energy-transition-china/" target="_blank" rel="noopener"><span class="outlet">Foreign Policy · 2024</span><span class="ttl">AI enters the critical mineral race</span><span class="by">Christine Lu</span></a></li>
+<li><a href="https://news.bgov.com/bloomberg-government-news/ai-project-seeks-to-streamline-critical-mineral-mapping-in-us" target="_blank" rel="noopener"><span class="outlet">Bloomberg Government · 2024</span><span class="ttl">AI project seeks to streamline critical mineral mapping in US</span><span class="by">Kelly Lunney</span></a></li>
+<li><a href="https://grist.org/labor/critical-minerals-mining-workforce-shortage/" target="_blank" rel="noopener"><span class="outlet">Grist · 2024</span><span class="ttl">The climate case for a career in mining</span><span class="by">Maddie Stone</span></a></li>
+<li><a href="https://defensescoop.com/2023/11/28/darpa-criticalmaas/" target="_blank" rel="noopener"><span class="outlet">DefenseScoop · 2023</span><span class="ttl">AI-focused ‘hackathons’ to kick off early next year as White House moves to strengthen US supply chains</span><span class="by">Mikayla Easley</span></a></li>
+<li><a href="https://www.nytimes.com/2023/02/02/climate/nebraska-mine-niobium-rare-earths.html" target="_blank" rel="noopener"><span class="outlet">The New York Times · 2023</span><span class="ttl">Nebraskans are sitting on strategic metals. Is mining a patriotic duty?</span><span class="by">Dionne Searcey</span></a></li>
+<li><a href="https://web.archive.org/web/20221116101543/https://www.protocol.com/climate/critical-minerals-usgs-ai-mapping" target="_blank" rel="noopener"><span class="outlet">Protocol · 2022</span><span class="ttl">The US doesn’t know where its critical minerals are. AI could help find them.</span><span class="by">Lisa Martine Jenkins</span></a></li>
+<li><a href="https://www.theregister.com/2022/08/17/darpa_metals_ai/" target="_blank" rel="noopener"><span class="outlet">The Register · 2022</span><span class="ttl">DARPA seeks AI coders to help find rare earth minerals</span><span class="by">Katyanna Quach</span></a></li>
+<li><a href="https://www.darpa.mil/about-us/podcast" target="_blank" rel="noopener"><span class="outlet">Voices from DARPA podcast · 2022</span><span class="ttl">Voices from DARPA</span><span class="by">Interviewee</span></a></li>
+  </ul>
+  <h3 style="margin-top:32px">Official releases</h3>
+  <ul class="rel">
+<li><a href="https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/11/27/fact-sheet-president-biden-announces-new-actions-to-strengthen-americas-supply-chains-lower-costs-for-families-and-secure-key-sectors/" target="_blank" rel="noopener">White House fact sheet on strengthening America’s supply chains (2023)&nbsp;&#8599;</a></li>
+<li><a href="https://www.usgs.gov/news/featured-story/collaborative-workshop-spotlights-machine-learning-accelerate-usgs-critical" target="_blank" rel="noopener">USGS: Collaborative workshop spotlights machine learning to accelerate USGS critical mineral assessments&nbsp;&#8599;</a></li>
+<li><a href="https://www.usgs.gov/news/technical-announcement/darpa-announces-winners-artificial-intelligence-competition-aid" target="_blank" rel="noopener">USGS: DARPA announces winners of artificial intelligence competition&nbsp;&#8599;</a></li>
+<li><a href="https://www.usgs.gov/news/national-news-release/us-geological-survey-releases-2022-list-critical-minerals" target="_blank" rel="noopener">USGS: U.S. Geological Survey releases 2022 list of critical minerals&nbsp;&#8599;</a></li>
+<li><a href="https://www.usgs.gov/news/usgs-publication-iran-s-nonfuel-minerals-industry-released" target="_blank" rel="noopener">USGS: Publication on Iran’s nonfuel minerals industry released&nbsp;&#8599;</a></li>
+<li><a href="https://www.darpa.mil/news-events/2022-12-16" target="_blank" rel="noopener">DARPA news release, December 2022&nbsp;&#8599;</a></li>
+<li><a href="https://www.darpa.mil/news-events/2022-08-15" target="_blank" rel="noopener">DARPA news release, August 2022&nbsp;&#8599;</a></li>
+<li><a href="https://criticalminerals.darpa.mil/" target="_blank" rel="noopener">DARPA CriticalMAAS program website&nbsp;&#8599;</a></li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="prose"><p>The best way to reach me is by email at <a href="#contact">email removed</a>, or on <a href="https://www.linkedin.com/pub/graham-lederer/83/a2/841" target="_blank" rel="noopener">LinkedIn</a>.</p></div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr">2026</span> Graham Lederer</span><span>Last updated November 2026</span></div></footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const q = document.getElementById('q'), list = document.getElementById('publist'), cnt = document.getElementById('pubcount');
+q.addEventListener('input', () => {
+  const t = q.value.trim().toLowerCase(); let n = 0;
+  list.querySelectorAll('ol.refs').forEach(ol => {
+    let any = false;
+    ol.querySelectorAll('li').forEach(li => { const hit = !t || li.textContent.toLowerCase().includes(t); li.hidden = !hit; if (hit) { any = true; n++; } });
+    ol.hidden = !any; ol.previousElementSibling.hidden = !any;
+  });
+  cnt.textContent = n + (n === 1 ? ' item' : ' items');
+});
+</script>
+</body>
+</html>
